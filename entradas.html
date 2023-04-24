@@ -48,18 +48,15 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">Nuestro Menu</a>
+                                    aria-expanded="false">Pedidos Online</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" style="font-size: large;"
-                                            href="../paginas/entradas.html">Entradas</a></li>
+                                            href="./entradas.html">Entradas</a></li>
                                     <li><a class="dropdown-item" style="font-size: large;"
-                                            href="../paginas/principales.html">Principales</a></li>
+                                            href="./index.html">Principales</a></li>
                                     <li><a class="dropdown-item" style="font-size: large;"
-                                            href="../paginas/postres.html">Postres</a></li>
+                                            href="./postres.html">Postres</a></li>
                                 </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="./paginas/cartas.html">Pedidos Online</a>
                             </li>
                         </ul>
                         <a href="./paginas/contacto.html"><img class="logo-contacto-navbar" src="./images/whatsapp.png"
@@ -80,7 +77,7 @@
                 <div class="card-items"></div>
 
                 <h2>Total: $<strong class="price-total">0</strong></h2>
-                <button class="btn_reset" type="reset" onClick="location.reload(false);">Vaciar Pedido</button>
+                <button class="btn_reset" type="reset" id="reset_carrito">Vaciar Pedido</button>
                 <button class="btn_continuar" type="submit" onclick="">Continuar</button>
             </div>
         </section>
@@ -166,7 +163,12 @@
             <p class="foottxt2">Imagenes y videos meramente ilustrativos</p>
             <p class="foottxt">Todos los derechos reservados</p>
         </footer>
-
+        <script> "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"</script>
+        <script>"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"</script>
+        <script>"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"</script>
+        <script>"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"</script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
         <script>
             function showCart(x) {
                 document.getElementById("products-id").style.display = "block";
@@ -176,7 +178,7 @@
             }
 
         </script>
-        <script src="./custom.js"></script>
+        <script src="./script.js"></script>
     </body>
 
 </html>

@@ -9,7 +9,7 @@ let buyThings = [];
 let totalCard = 0;
 let countProduct = 0;
 
-//functions
+
 loadEventListenrs();
 function loadEventListenrs() {
     allContainerCart.addEventListener('click', addProduct);
@@ -25,7 +25,7 @@ function addProduct(e) {
     }
 }
 
-function deleteProduct(e) {
+function deleteProduct(e) {         //borrado de pedidos
     if (e.target.classList.contains('delete-product')) {
         const deleteId = e.target.getAttribute('data-id');
 
@@ -40,16 +40,16 @@ function deleteProduct(e) {
 
         countProduct--;
     }
-    //FIX: El contador se quedaba con "1" aunque ubiera 0 productos
     if (buyThings.length === 0) {
         priceTotal.innerHTML = 0;
         amountProduct.innerHTML = 0;
     }
     loadHtml();
+    saveToLocalStorage();
 }
 
 function readTheContent(product) {
-    const infoProduct = {
+    const infoProducto = {
         image: product.querySelector('div img').src,
         title: product.querySelector('.title').textContent,
         price: product.querySelector('div p span').textContent,
@@ -57,13 +57,13 @@ function readTheContent(product) {
         amount: 1
     }
 
-    totalCard = parseFloat(totalCard) + parseFloat(infoProduct.price);
+    totalCard = parseFloat(totalCard) + parseFloat(infoProducto.price);
     totalCard = totalCard.toFixed(2);
 
-    const exist = buyThings.some(product => product.id === infoProduct.id);
+    const exist = buyThings.some(product => product.id === infoProducto.id);
     if (exist) {
         const pro = buyThings.map(product => {
-            if (product.id === infoProduct.id) {
+            if (product.id === infoProducto.id) {
                 product.amount++;
                 return product;
             } else {
@@ -72,11 +72,11 @@ function readTheContent(product) {
         });
         buyThings = [...pro];
     } else {
-        buyThings = [...buyThings, infoProduct]
+        buyThings = [...buyThings, infoProducto]
         countProduct++;
     }
     loadHtml();
-    //console.log(infoProduct);
+    saveToLocalStorage();
 }
 
 function loadHtml() {
@@ -89,22 +89,51 @@ function loadHtml() {
             <img src="${image}" alt="">
             <div class="item-content">
                 <h5>${title}</h5>
-                <h5 class="cart-price">${price}$</h5>
-                <h6>Amount: ${amount}</h6>
+                <h4 class="cart-price">${price}$</h4>
+                <h5>Cantidad: ${amount}</h5>
             </div>
             <span class="delete-product" data-id="${id}">X</span>
         `;
-
         containerBuyCart.appendChild(row);
-
         priceTotal.innerHTML = totalCard;
-
         amountProduct.innerHTML = countProduct;
     });
 }
+
 function clearHtml() {
     containerBuyCart.innerHTML = '';
 }
+//------- JSON --------
+function saveToLocalStorage() {
+    localStorage.setItem('buyThings', JSON.stringify(buyThings));
+    localStorage.setItem('totalCard', totalCard);
+    localStorage.setItem('countProduct', countProduct);
+}
 
+function getFromLocalStorage() {
+    if (localStorage.getItem('buyThings')) {
+        buyThings = JSON.parse(localStorage.getItem('buyThings'));
+        totalCard = localStorage.getItem('totalCard');
+        countProduct = localStorage.getItem('countProduct');
+
+        loadHtml();
+    }
+}
+getFromLocalStorage();
+
+//------reset del carrito y del contador en imagen
+
+const resetCartButton = document.querySelector('#reset_carrito');
+resetCartButton.addEventListener('click', resetCart);
+
+function resetCart() {
+    buyThings = [];
+    totalCard = 0;
+    countProduct = 0;
+    clearHtml();
+    saveToLocalStorage();
+    priceTotal.innerHTML = 0;
+    amountProduct.innerHTML = 0;
+}
 
 

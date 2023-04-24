@@ -15,6 +15,15 @@
       {
         "link-name": "off"
       }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "max-width: fit-content",
+          "max-height: fit-content"
+        ]
+      }
     ]
   }
 }
