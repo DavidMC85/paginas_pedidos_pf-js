@@ -88,7 +88,7 @@
             <div class="products">
                 <div class="carts">
                     <div>
-                        <img src="./images/pedidos/principales/sopa.jpg" alt="sopa">
+                        <img id="tooltip-9" src="./images/pedidos/principales/sopa.jpg" alt="sopa" title="Deliciosa sopa de jamon cocido con finas hierbas y queso reggiano." >
                         <p><span>1200</span>$</p>
                     </div>
                     <p class="title">Sopa de Jamon Cocido</p>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="carts">
                     <div>
-                        <img src="./images/pedidos/principales/sopa_cubierta.jpg" alt="cubierta">
+                        <img id="tooltip-10" src="./images/pedidos/principales/sopa_cubierta.jpg" alt="cubierta" title="Sopa de jamón cubierta con trozos de pan frito, jamon crudo y queso parmesano." >
                         <p><span>1600</span>$</p>
                     </div>
                     <p class="title">Sopa Cubierta</p>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="carts">
                     <div>
-                        <img src="./images/pedidos/principales/bacalao_frito.jpg" alt="bacalao">
+                        <img id="tooltip-11" src="./images/pedidos/principales/bacalao_frito.jpg" alt="bacalao" title="Bacalao fresco frito con hierbas llovidas, con guarnición a elección." >
                         <p><span>2700</span>$</p>
                     </div>
                     <p class="title"> Bacalao Frito</p>
@@ -112,7 +112,7 @@
                 </div>
                 <div class="carts">
                     <div>
-                        <img src="./images/pedidos/principales/cabrito.jpg" alt="cabrito">
+                        <img id="tooltip-12" src="./images/pedidos/principales/cabrito.jpg" alt="cabrito" title="Pieza de cabrito a elección del cliente, asado a las brasas." >
                         <p><span>3000</span>$</p>
                     </div>
                     <p class="title">Cabrito Braseado</p>
@@ -120,7 +120,7 @@
                 </div>
                 <div class="carts">
                     <div>
-                        <img src="./images/pedidos/principales/entrecot.jpg" alt="entrecot">
+                        <img id="tooltip-13" src="./images/pedidos/principales/entrecot.jpg" alt="entrecot" title="Entrecot al asador, con guarnición de papas bravas y ensalada mixta." >
                         <p><span>2900</span>$</p>
                     </div>
                     <p class="title"> Entrecot a las Brasas</p>
@@ -128,7 +128,7 @@
                 </div>
                 <div class="carts">
                     <div>
-                        <img src="./images/pedidos/principales/merluza_romana.jpg" alt="merluza">
+                        <img id="tooltip-14" src="./images/pedidos/principales/merluza_romana.jpg" alt="merluza" title="Clasica Merluza a la Romana con guarnición a elección." >
                         <p><span>2700</span>$</p>
                     </div>
                     <p class="title">Merluza a la Romana</p>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="carts">
                     <div>
-                        <img src="./images/pedidos/principales/Solomillo.jpg" alt="solomillo">
+                        <img id="tooltip-15" src="./images/pedidos/principales/Solomillo.jpg" alt="solomillo" title="Solomillo de cerdo con salsa de mostaza y guarnición a elección." >
                         <p><span>2500</span>$</p>
                     </div>
                     <p class="title">Solomillo a la Mostaza</p>
@@ -144,7 +144,7 @@
                 </div>
                 <div class="carts">
                     <div>
-                        <img src="./images/pedidos/principales/Sorrentinos.jpg" alt="sorrentinos">
+                        <img id="tooltip-16" src="./images/pedidos/principales/Sorrentinos.jpg" alt="sorrentinos" title="Sorrentinos con tinta de calamar, rellenos de salmón rosado, salsa a elección." >
                         <p><span>2300</span>$</p>
                     </div>
                     <p class="title">Sorrentinos de Salmón </p>
@@ -169,6 +169,8 @@
         <script>"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"</script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <script>
             function showCart(x) {
                 document.getElementById("products-id").style.display = "block";
@@ -177,6 +179,7 @@
                 document.getElementById("products-id").style.display = "none";
             }
         </script>
+        <script src="./jquery.js" ></script>
         <script src="./script.js"></script>
     </body>
 
